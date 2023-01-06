@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :reviews
   root "movies#index"
 
   # get "/movies" => "movies#index"
@@ -8,6 +7,8 @@ Rails.application.routes.draw do
   # get "/movies/:id/edit" => "movies#edit", as: "edit_movie"
   # patch "/movies/:id" => "movies#update"
   
-  resources :movies
+  resources :movies do
+    resources :reviews
+  end
 
 end
