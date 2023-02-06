@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-  before_action :set_user, only: [:show, :edit, :update]
+  before_action :set_user, only: [:show, :edit, :update, :destroy]
 
   def index 
     @users = User.all
@@ -31,6 +31,11 @@ class UsersController < ApplicationController
     else
       redirect_to :edit
     end
+  end
+
+  def destroy
+    @user.destroy
+    redirect_to movies_url, notice: "user deleted"
   end
 
   private
