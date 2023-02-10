@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :users
   get "/sign_up" => "users#new"
+
+  resource :session, only: [:new, :create, :destroy]
   
   resources :movies do
     resources :reviews
