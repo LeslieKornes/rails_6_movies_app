@@ -5,7 +5,6 @@ class SessionsController < ApplicationController
   end
   
   def create
-    # fail
     user = User.find_by(email: params[:email_or_username]) ||
       User.find_by(username: params[:email_or_username])
     if user && user.authenticate(params[:password])
@@ -19,6 +18,7 @@ class SessionsController < ApplicationController
   end
 
   def destroy
-
+    session[:user_id] = nil
+    redirect_to :root, notice: "You have successfully signed out!"
   end
 end
