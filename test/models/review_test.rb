@@ -4,11 +4,11 @@
 #
 #  id         :integer          not null, primary key
 #  comment    :text
-#  name       :string
 #  stars      :integer
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  movie_id   :integer          not null
+#  user_id    :integer
 #
 # Indexes
 #
