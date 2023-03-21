@@ -4,7 +4,7 @@
   <%= @user.username %>
   <h2><%= mail_to(@user.email) %></h2>
   <div class="actions">
-    <% if current_user_admin? %> %>
+    <% if current_user_admin? %>
       <%= link_to "Edit", edit_user_path(@user), class: "button edit" %>
       <%= link_to "Delete",
         @user,
